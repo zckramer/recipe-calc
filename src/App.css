@@ -2,18 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Ingredient {
+  border: 1px solid white;
+  padding: 1rem;
+  margin: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.Recipe-Card {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,15 +19,16 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.RecipeCard__Ingredients-Container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  padding: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Recipe-Card__Totals {
+  border-top: 1px solid whitesmoke;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 1rem;
 }
