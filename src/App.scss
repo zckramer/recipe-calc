@@ -1,0 +1,81 @@
+$color-i-like: black;
+
+.App {
+  text-align: center;
+}
+
+.Ingredient {
+  border: 1px solid white;
+  padding: 1rem;
+  margin: 1rem;
+  
+  div {
+    border: 1px solid white;
+  }
+
+  span{
+    color: pink;
+  }
+
+  .Ingredient__Remove {
+    user-select: none;
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: .1rem;
+    transition: .2s;
+    margin: 1rem;
+
+    &:hover{
+      cursor: pointer;
+      user-select: none;
+      color: black;
+      background-color: white;
+      font-size: 1.2rem;
+      transition: .2s;
+    }
+  }
+}
+
+.Recipe-Card {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.RecipeCard__Ingredients-Container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 2rem;
+
+  .add-ingredient{
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+    padding: .25rem;
+    border: 1px solid white;
+  }
+}
+
+.Recipe-Card__Totals {
+  border-top: 1px solid whitesmoke;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 1rem;
+}
+
+.Ingredient__Remove {
+  height: 1rem;
+  width: 1rem;
+}

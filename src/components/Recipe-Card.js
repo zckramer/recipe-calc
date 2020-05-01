@@ -15,6 +15,7 @@ export default function RecipeCard (props) {
     // States
 
     const [ingredientsArr, setIngredientsArray] = React.useState([banana, almondMilk, yoghurt])
+
     
     // Functions
 
@@ -26,8 +27,13 @@ export default function RecipeCard (props) {
                 total = total + parseInt(nutrient[prop])
             })
         }
-        
-        return total
+        // FELT FAT, MIGHT DELETE LATER
+        if(total>100){
+            window.alert("You're Gonna Die")
+            return "FAT"
+        } else {
+            return total
+        }
     }
     
     function handleAddIngredient (newIngredient) {
@@ -35,6 +41,10 @@ export default function RecipeCard (props) {
         setIngredientsArray(ingredientsArr.concat(americanCheese))
     }
 
+    function handleRemoveIngredient (event) {
+        console.log(event.target)
+        ingredientsArr.splice(event.target.index);
+    }
 
     
     return (
@@ -52,44 +62,23 @@ export default function RecipeCard (props) {
                         return( 
                             <Ingredient 
                                 key={index}
+                                remove={(event)=> handleRemoveIngredient(event)}
                                 label={ingredient.label}
                                 measurement={ingredient.measurement} 
                                 unit={ingredient.unit}
                                 fat={ingredient.fat}
                                 carbs={ingredient.carbs}
+
                             />
                         ) 
                     })
                 }
                 
-                {/* <Ingredient 
-                    label={banana.label}
-                    measurement={banana.measurement} 
-                    unit={banana.unit}
-                    fat={banana.fat}
-                    carbs={banana.carbs}
-
-                /> 
-                <Ingredient 
-                    label={almondMilk.label}
-                    measurement={almondMilk.measurement}
-                    unit={almondMilk.unit}
-                    fat={almondMilk.fat}
-                    carbs={almondMilk.carbs}
-
-                />
-                <Ingredient 
-                    label={yoghurt.label} 
-                    measurement={yoghurt.measurement}
-                    unit={yoghurt.unit}
-                    fat={yoghurt.fat}
-                    carbs={yoghurt.carbs}
-
-                /> */}
                 <div
+                className="add-ingredient"
                 onClick={()=>{
                     handleAddIngredient(americanCheese)}}>
-                    Add an Ingredient
+                    Add
 
                 </div>
 
